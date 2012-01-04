@@ -5,9 +5,9 @@ add_action( 'save_post', 'protean_saveCustomFields',1,2 );
 function protean_create_custom_fields() {
 	global $post;
 	// only show when edit post
-	if ( $post->post_type != 'post' )return;
-	add_meta_box( 'protean-custom-fields-style', 'Protean: page',  'protean_display_custom_field_page' , 'post', 'normal', 'high' );
-	add_meta_box( 'protean-custom-fields-banner', 'Protean: banner',  'protean_display_custom_field_banner' , 'post', 'normal', 'high' );
+	if ( $post->post_type != 'post' && $post->post_type != 'page' )return;
+	add_meta_box( 'protean-custom-fields-style', 'Protean: page',  'protean_display_custom_field_page' , null, 'normal', 'high' );
+	add_meta_box( 'protean-custom-fields-banner', 'Protean: banner',  'protean_display_custom_field_banner' , null, 'normal', 'high' );
 	
 	// for color picker
 	wp_enqueue_script('jquery-ui-core');
@@ -50,7 +50,7 @@ function protean_display_custom_field_banner(){
 } //display_custom_field 
 
 function protean_saveCustomFields( $post_id, $post ) {
-	if ( $post->post_type != 'post' )return;
+	if ( $post->post_type != 'post' && $post->post_type != 'page' )return;
 	
 	if(isset($_POST['protean'])){
 		foreach($_POST['protean'] as $k=>$opt){

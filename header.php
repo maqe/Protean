@@ -45,7 +45,7 @@
 	
 	<?php 
 	$idstr ='';
-	if(is_single()){
+	if(is_single() || is_page()){
 		$idstr = 'id='.get_the_ID();
 	}else if ( have_posts() ) {
 		while ( have_posts() ) : the_post();
