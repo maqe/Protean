@@ -1,5 +1,5 @@
 <footer id="page_footer">
-		<div id="poweredby" class="fl_left"><?php _e('Powered by the Protean Theme from Landau Reece.','protean')?></div>
+		<div id="poweredby" class="fl_left"><?php _e('Powered by the Protean Theme from ','protean')?><a href="http://www.maqe.com/">Maqe</a></div>
 		<div id="feed_link" class="fl_right">
 			<a href="<?php bloginfo('rss2_url'); ?>" class="box accent"><?php _e('Entries RSS','protean')?></a>
 			<a href="<?php bloginfo('comments_rss2_url'); ?>" class="box accent"><?php _e('Comments RSS','protean')?></a>
